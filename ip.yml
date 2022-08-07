@@ -1,0 +1,9 @@
+---
+- name: printing IP of nodes
+  hosts: all
+
+  tasks:
+  - name: print IP
+    debug:
+      msg: >
+        This host uses IP address {{ ansible_facts.default_ipv4.address }}

@@ -1,0 +1,21 @@
+---
+- name: install httpd in AmzLinux
+  hosts: webservers
+
+  tasks:
+  - name: httpd in Amzlinux
+    yum:
+      name: httpd
+      state: latest
+
+  - name: start httpd 
+    shell: "service httpd start"
+
+- name: install httpd in Ubuntu node
+  hosts: ubuntuservers
+
+  tasks:
+  - name: http in ubuntuserver
+    apt:
+      name: apache2
+      state: present
